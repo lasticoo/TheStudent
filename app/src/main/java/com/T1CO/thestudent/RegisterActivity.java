@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText addressEditText;
     private Spinner genderSpinner;
     private Spinner religionSpinner;
-
+    private Spinner HP;
     private Button login;
     private EditText noHp;
     @Override
