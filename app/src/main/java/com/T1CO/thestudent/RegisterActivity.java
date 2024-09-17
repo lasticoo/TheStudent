@@ -28,6 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Spinner HP;
     private Button login;
     private EditText noHp;
+    private EditText getPasswordEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
