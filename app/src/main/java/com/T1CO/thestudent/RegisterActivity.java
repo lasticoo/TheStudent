@@ -26,6 +26,8 @@ public class RegisterActivity extends AppCompatActivity {
     private Spinner genderSpinner;
     private Spinner religionSpinner;
     private Button login;
+    private EditText fadil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
