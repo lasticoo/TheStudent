@@ -1,6 +1,7 @@
 package com.T1CO.thestudent;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,8 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText addressEditText;
     private Spinner genderSpinner;
     private Spinner religionSpinner;
-    private Button login;
-    private EditText fadil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,25 +76,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void processRegistration() {
         // Mengambil data dari EditText dan Spinner
-        String fullname = fullnameEditText.getText().toString();
-        String username = usernameEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
         String email = emailEditText.getText().toString();
-        String birthdate = birthdateEditText.getText().toString();
-        String address = addressEditText.getText().toString();
-        String gender = genderSpinner.getSelectedItem().toString();
-        String religion = religionSpinner.getSelectedItem().toString();
+        String username = usernameEditText.getText().toString(); // Ambil username
 
-        // Menampilkan pesan registrasi berhasil dengan semua data
-        String messageString = "Registrasi berhasil\n" +
-                "Nama: " + fullname + "\n" +
-                "Username: " + username + "\n" +
-                "Email: " + email + "\n" +
-                "Tanggal Lahir: " + birthdate + "\n" +
-                "Alamat: " + address + "\n" +
-                "Jenis Kelamin: " + gender + "\n" +
-                "Agama: " + religion;
+        // Menampilkan pesan registrasi berhasil
+        Toast.makeText(this, "Registrasi berhasil", Toast.LENGTH_LONG).show();
 
-        Toast.makeText(this, messageString, Toast.LENGTH_LONG).show();
+        // Pindah ke LoginActivity dan mengirim email dan username
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        intent.putExtra("email", email);
+        intent.putExtra("username", username); // Kirim username
+        startActivity(intent);
+        finish(); // Tutup activity ini
     }
 }
